@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/spoof/*
+!data/spoof/.gitkeep
+experiments/*
+!experiments/.gitkeep
+*.onnx
+*.pt
+*.ckpt
+.DS_Store
