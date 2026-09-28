@@ -1,7 +1,13 @@
+# System dependency: ffmpeg (e.g. `brew install ffmpeg` on macOS) — required
+# by torchaudio/torchcodec for audio load/save and codec-simulation augmentation.
 torch
 torchaudio
+torchcodec
 sounddevice
 soundfile
+librosa
+scipy
+pyyaml
 onnxruntime
 speechbrain
 faster-whisper

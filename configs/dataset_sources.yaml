@@ -1,0 +1,59 @@
+# Phase 1.1: public dataset sources. Nothing here is downloaded automatically —
+# review license terms per dataset before fetching, then point the pipeline
+# scripts at the local paths below.
+
+datasets:
+  - name: VoxCeleb1
+    purpose: speaker pretraining and benchmark
+    url: https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox1.html
+    license: research use, requires registration
+    local_path: data/raw/voxceleb1
+    notes: can skip if starting from a pretrained checkpoint (SpeechBrain/WeSpeaker/NeMo)
+
+  - name: VoxCeleb2
+    purpose: speaker pretraining and benchmark
+    url: https://www.robots.ox.ac.uk/~vgg/data/voxceleb/vox2.html
+    license: research use, requires registration
+    local_path: data/raw/voxceleb2
+    notes: same as VoxCeleb1
+
+  - name: Common Voice (Persian)
+    purpose: Persian speech and speakers, fine-tuning and evaluation
+    url: https://commonvoice.mozilla.org/en/datasets
+    license: CC0
+    local_path: data/raw/common_voice_fa
+    notes: select the "fa" (Persian) locale when downloading
+
+  - name: DeepMine
+    purpose: Persian speaker verification dataset
+    url: http://www.dsp.sut.ac.ir/deepmine/
+    license: research use, requires request
+    local_path: data/raw/deepmine
+    notes: request access from the dataset maintainers
+
+  - name: ASVspoof 2019 LA
+    purpose: anti-spoofing training baseline and benchmark
+    url: https://datashare.ed.ac.uk/handle/10283/3336
+    license: research use
+    local_path: data/raw/asvspoof2019_la
+    notes: logical access (LA) subset — TTS/VC attacks
+
+  - name: ASVspoof 5
+    purpose: anti-spoofing training baseline and benchmark, newer attacks
+    url: https://www.asvspoof.org/
+    license: research use, requires registration
+    local_path: data/raw/asvspoof5
+
+  - name: MUSAN
+    purpose: additive noise augmentation (noise, music, babble)
+    url: https://www.openslr.org/17/
+    license: CC-BY 4.0
+    local_path: data/raw/musan
+    notes: consumed by src/audio_utils/augment.py::add_noise
+
+  - name: RIRS_NOISES
+    purpose: reverb augmentation (room impulse responses)
+    url: https://www.openslr.org/28/
+    license: Apache 2.0
+    local_path: data/raw/rirs_noises
+    notes: consumed by src/audio_utils/augment.py::add_reverb
